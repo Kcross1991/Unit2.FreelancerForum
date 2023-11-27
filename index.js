@@ -1,47 +1,70 @@
-   const freelancers=[
-    { name: "Alice", Occupation: "Writer", price:30 },
-    { name: "Bob", Occupation: "Teacher", price: 50 },
-    { name: "Carol", Occupation: "Programmer", price: 70 },
-    { name: "Chuck", Occupation: "Lawyer", price: 80},
-    { name: "John", Occupation: "Chef", price:75},
-    { name: "Bucky", Occupation: "SuperHero", price: 200 },
-   ] 
-   console.log(freelancers)
-   const maxfreelancers= 6;
+const names=["Alice", "Bob", "Carol"];
+const Occupations = ["Writer", "Teacher", "Programmer"];
+const Prices = [30, 50, 70]
+const maxfreelancers= 6;
 
-   const addfreelancersIntervalId = setInterval(freelancers, 3000);
-   render()
+  const freelancers=[
+    { name: "Alice",
+     Occupation: "Writer",
+      price:30 
+    },
+    { name: "Bob",
+     Occupation: "Teacher",
+     price: 50 
+    },
+    { name: "Carol",
+     Occupation: "Programmer", 
+     price: 70 
+    },
+    { name: "Chuck",
+     Occupation: "Lawyer",
+      price: 80
+    },
+    { name: "John",
+    Occupation: "Chef",
+     price:75
+    },
+    { name: "Bucky",
+     Occupation: "SuperHero",
+      price: 200
+    },
+   ];
+
+   setInterval (addfreelancer,3000)
+render()
+
   function render() {
     //Render the Freelancers
     const freelance = document.querySelector("#freelance");
     const freelancerElements = freelancers.map((freelancer) => {
       const element = document.createElement("li");
-      element.classList.add(freelancers.name, freelancers.Occupation,freelancers.price);
+      element.classList.add(freelancers.name, freelancers.Occupation, freelancers.price);
+      element.textContent = `${freelancers.name}, ${freelancers.occupation}, ${freelancers.price}`;
       return element;
-    })
-    freelance.replaceChildren(...freelancersElements);
+    });
+    freelance.replaceChildren(...freelancerElements);
 }
 
 render()
 
-function getAverage(price){
-    let num = 0;
+function getAverage(){
+    let num = 1
     for (i = 0; i < price.length; i++){
-        num +=(price[i]/ price.length);
-    }
-    return num
+        average = average+Price[i]/3
+        return average
+    };
+    const getAverage = document.querySelector("average")
+    averagePrice.textContent = `The average start price is ${average}`
 }
-console.log ( getAverage);
+
 
 
 function addfreelancer() {
-    const name = name[Math.floor(Math.random() * colors.length)];
-    const occupation = occupation[Math.floor(Math.random() * colors.length)];
-    const price = price[Math.floor(Math.random() * colors.length)];
+    const addedfreelancer = freelancers[Math.floor(Math.random() * freelancers.length)]
+    console.log(addedfreelancer)
 
-freelancers.push({freelancer});
-  if (freelancers.length >= maxfreelancers){
-    clearInterval(addfreelancersIntervalId);
-  };
-  render()
+freelancers.push({ freelancers: addedfreelancer})
+
+render()
+
 }
